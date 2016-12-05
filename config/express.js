@@ -8,7 +8,7 @@ var config = require('./config'),
 
 module.exports = function() {
 
-    // create the express app
+    /** create the express app */
     var app = express();
 
     if (process.env.NODE_ENV === 'development') {
@@ -36,6 +36,7 @@ module.exports = function() {
         next();
     });
 
+    /** Dit zorgt ervoor dat we bij de variabelen kunnen die gepost zijn zoals je in PHP bij $_POST mag */
     app.use(bodyParser.urlencoded({
         extended: true
     }));
