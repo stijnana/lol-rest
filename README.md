@@ -13,6 +13,7 @@ Studenten zetten de code zelf om naar EcmaScript 6 (en 7).
 ##### Leesvoer:
 
 * ExpressJS: http://expressjs.com/en/guide/routing.html
+* ExpressJS middleware: https://expressjs.com/en/guide/writing-middleware.html
 
 ##### Punten om eens te verkennen:
 
