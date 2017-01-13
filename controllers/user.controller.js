@@ -13,18 +13,35 @@ exports.read = function(req, res) {
 /**
  * Create JSON response with all users
  */
+
+
+var users = [
+    {name:"henk", age:20},
+    {name:"piet", age:21},
+    {name:"ra", age:22},
+    {name:"peter", age:23},
+    {name:"peter", age:23}
+];
+
+var car = {type:"Fiat", model:"500", color:"white"};
+
 exports.list = function(req, res) {
 
     console.log("voor nu geven we altijd dezelfde lijst terug met users");
 
-    var users = [
-        {name: "Beren"},
-        {name: "Hugo"},
-        {name: "Ingrid"}
-    ];
-
     res.json(users);
 };
+
+exports.counter = function(req, res){
+    //res.json(users);
+    var countall = 'er zijn nu ' + users.length + ' users' ;
+
+    res.json(countall);
+};
+
+
+
+
 
 /**
  * Function to lookup a particular user and store it in the request object
@@ -48,4 +65,15 @@ exports.getUserByID = function(req, res, next, userID) {
     /** de volgende Middleware/functie mag aan de slag */
     next();
 
+};
+
+
+
+
+
+
+exports.toevoegen = function(req, res){
+    var newUser = req.body;
+    res.json(newUser);
+    users.push(newUser);
 };

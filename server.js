@@ -1,5 +1,5 @@
 /*
-main application file. Starting point of the backend
+ main application file. Starting point of the backend
  */
 
 // init environment variable
@@ -8,6 +8,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 var express = require('./config/express'), // require web framework
     config = require('./config/config'),
     port = config.port;
+
 
 // init web framework
 var app = express();

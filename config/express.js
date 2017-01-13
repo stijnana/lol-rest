@@ -4,7 +4,9 @@
 var config = require('./config'),
     express = require('express'),
     bodyParser = require('body-parser'),
+    morgan = require('morgan'),
     methodOverride = require('method-override');
+
 
 module.exports = function() {
 
@@ -12,6 +14,7 @@ module.exports = function() {
     var app = express();
 
     if (process.env.NODE_ENV === 'development') {
+        app.use(morgan('dev'));
         /** hier gaan we straks specifieke development middleware koppelen (bijvoorbeeld een logger) */
     } else if (process.env.NODE_ENV === 'production') {
         /** hier gaan we straks specifieke productie middleware koppelen (bijvoorbeeld compressie) */
